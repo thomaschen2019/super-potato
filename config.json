@@ -1,0 +1,7 @@
+{
+    "db_path": "sqlite:///C:/Users/zheji/Desktop/ShortSaleMonitor/shortDB.sqlite",
+    "start_date": "2019-02-20",
+    "end_date": "2020-06-12",
+    "finra_data_path": "DIX_data/",
+    "cboe_data_path":  "DIX_data/"
+}
