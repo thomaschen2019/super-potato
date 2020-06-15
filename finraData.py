@@ -83,7 +83,7 @@ def process_finra_data(filepath, con, debug, date = datetime.datetime.today()):
 def setup(start_date, end_date, filepath, con, debug):
     dates = pd.bdate_range(start=start_date, end=end_date)
     for date in dates:
-        #download_finra_data(filepath, date)
+        download_finra_data(filepath, date)
         process_finra_data(filepath, con, debug, date)
 
 def update(filepath, con, debug):

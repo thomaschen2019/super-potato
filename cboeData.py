@@ -87,7 +87,7 @@ def setup_cboe(start_date, end_date, filepath, con, debug):
     dates = pd.bdate_range(start=start_date, end=end_date)
     con.execute("DROP TABLE IF EXISTS Lit")
     for date in dates:
-        #download_cboe_data(filepath, date)
+        download_cboe_data(filepath, date)
         process_cboe_data(filepath, con, debug, date)
 
 def update_cboe(filepath, con, debug):
