@@ -76,9 +76,6 @@ def process_finra_data(filepath, con, debug, date = datetime.datetime.today()):
             merged.to_sql('Dark', con, if_exists='append')
     except Exception as e:
         print(" Failed to add {} data into database due to {}".format(date_column, e))
-        # print ('-'*60)
-        # traceback.print_exc(file=sys.stdout)
-        # print ('-'*60)
 
 def setup(start_date, end_date, filepath, con, debug):
     dates = pd.bdate_range(start=start_date, end=end_date)
@@ -104,7 +101,6 @@ if __name__ == '__main__':
     end_date = config['end_date']
     filepath = config['finra_data_path']
     db_path = config['db_path']
-    # "sqlite:///C:/Users/zheji/Desktop/TradingTools/shortData.sqlite"
     con = db.create_engine(db_path)
 
     #setup or update database based on user choice
@@ -114,4 +110,4 @@ if __name__ == '__main__':
     if args.setup:
         setup(start_date, end_date, filepath, con, debug)
     else:
-        update(filepath, con)
+        update(filepath, con, debug)

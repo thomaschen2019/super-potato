@@ -98,7 +98,7 @@ def update_cboe(filepath, con, debug):
     for date in dates[1:]:
         print("Updating ", date)
         download_cboe_data(filepath, date)
-        process_cboe_data(filepath, con, date, debug)
+        process_cboe_data(filepath, con, debug, date)
 
 if __name__ == '__main__':
     # load config
